@@ -1,0 +1,61 @@
+{
+  "rows": 79705,
+  "stations": 1262,
+  "hours": 77,
+  "test_start_utc": "2026-03-26 08:00:00+00:00",
+  "peak_threshold": 0.8,
+  "best_model": "Gradient Boosting",
+  "t1": {
+    "Baseline: average": {
+      "MAE": 0.3262,
+      "RMSE": 0.3705,
+      "R2": -0.0
+    },
+    "Baseline: same as now": {
+      "MAE": 0.1006,
+      "RMSE": 0.2042,
+      "R2": 0.6961
+    },
+    "Linear regression": {
+      "MAE": 0.1192,
+      "RMSE": 0.1934,
+      "R2": 0.7275
+    },
+    "Random Forest": {
+      "MAE": 0.102,
+      "RMSE": 0.1692,
+      "R2": 0.7914
+    },
+    "Gradient Boosting": {
+      "MAE": 0.1007,
+      "RMSE": 0.1685,
+      "R2": 0.7933
+    }
+  },
+  "peak_at_0.8": {
+    "threshold": 0.8,
+    "precision": 0.8518,
+    "recall": 0.7508,
+    "f1": 0.7981
+  },
+  "top_features_t1": {
+    "occ_now": 0.30376,
+    "lag_1": 0.01733,
+    "operational_chargers": 0.00744,
+    "lag_2": 0.00558,
+    "traffic_now": 0.00397,
+    "traffic_profile_t1": 0.00388,
+    "dist_centre_km": 0.00248,
+    "lat": 0.002
+  },
+  "top_features_t6": {
+    "dist_centre_km": 0.02535,
+    "hour_sin": 0.0227,
+    "occ_now": 0.0177,
+    "lat": 0.01545,
+    "lon": 0.01136,
+    "max_kw": 0.00547,
+    "zip_stations": 0.00522,
+    "n_points": 0.00463
+  }
+}

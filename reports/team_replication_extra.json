@@ -1,0 +1,6 @@
+{
+  "peak_precision_0.8": 0.8889,
+  "peak_recall_0.8": 0.092,
+  "corr_event_ratio_vs_true_occupancy": 0.1881,
+  "share_station_hours_with_no_message": 0.716
+}

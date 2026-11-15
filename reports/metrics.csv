@@ -1,0 +1,16 @@
+horizon,model,MAE,RMSE,R2,n_train,n_test
+t+1,Baseline: average,0.3262,0.3705,-0.0,49888,18614
+t+1,Baseline: same as now,0.1006,0.2042,0.6961,49888,18614
+t+1,Linear regression,0.1192,0.1934,0.7275,49888,18614
+t+1,Random Forest,0.102,0.1692,0.7914,49888,18614
+t+1,Gradient Boosting,0.1007,0.1685,0.7933,49888,18614
+t+3,Baseline: average,0.3245,0.3704,-0.0017,45778,16193
+t+3,Baseline: same as now,0.2177,0.3554,0.078,45778,16193
+t+3,Linear regression,0.2362,0.3107,0.2952,45778,16193
+t+3,Random Forest,0.2124,0.2809,0.4239,45778,16193
+t+3,Gradient Boosting,0.2071,0.2778,0.4366,45778,16193
+t+6,Baseline: average,0.3267,0.3765,-0.0178,40034,12663
+t+6,Baseline: same as now,0.3195,0.4605,-0.5223,40034,12663
+t+6,Linear regression,0.2931,0.3585,0.0772,40034,12663
+t+6,Random Forest,0.2618,0.3289,0.2234,40034,12663
+t+6,Gradient Boosting,0.2537,0.3219,0.256,40034,12663

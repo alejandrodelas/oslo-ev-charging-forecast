@@ -1,0 +1,8 @@
+events: 107,127 raw -> 106,966 after removing duplicates
+continuous collection segments:
+                                      min                              max
+segment                                                                  
+0       2026-03-22 13:16:36.892497+00:00 2026-03-24 13:06:42.565115+00:00
+1       2026-03-25 20:54:58.649936+00:00 2026-03-27 01:43:07.013007+00:00
+traffic: 134 points kept, 672 hours
+station-hour table: 79,705 rows, 1262 stations, 77 hours -> data/processed/station_hour.csv.gz

@@ -1,0 +1,4 @@
+horizon,team_rows,team_stations,team_R2,team_MAE_vs_avg_baseline_pct,this_rows,this_R2,this_MAE_vs_avg_baseline_pct
+t+1,5489,592,0.293,20.719,68502,0.793,69.129
+t+3,3476,204,0.153,14.174,61971,0.437,36.179
+t+6,2375,107,0.136,12.611,52697,0.256,22.345

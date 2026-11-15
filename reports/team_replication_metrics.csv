@@ -1,0 +1,10 @@
+horizon,model,MAE,RMSE,R2,n_rows,n_stations
+t+1,Baseline: average,0.2558,0.3281,-0.0124,5489,592
+t+1,Baseline: lag_1,0.267,0.4052,-0.5448,5489,592
+t+1,Random Forest (team),0.2028,0.2742,0.2926,5489,592
+t+3,Baseline: average,0.2053,0.2714,-0.0095,3476,204
+t+3,Baseline: lag_1,0.2002,0.3078,-0.2977,3476,204
+t+3,Random Forest (team),0.1762,0.2486,0.1533,3476,204
+t+6,Baseline: average,0.1911,0.2529,-0.0186,2375,107
+t+6,Baseline: lag_1,0.2004,0.2821,-0.2671,2375,107
+t+6,Random Forest (team),0.167,0.2329,0.1362,2375,107

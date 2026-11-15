@@ -1,0 +1,38 @@
+/home/claude/oslo-ev-charging-forecast/src/train.py:61: DeprecationWarning: The 'generic' unit for NumPy timedelta is deprecated, and will raise an error in the future. This includes implicit conversion of bare integers (e.g. `+ 1`). Please use a specific unit instead.
+  tr, te = d[d.hour < TEST_START - pd.Timedelta(hours=h)], d[d.hour >= TEST_START]  # gap: no target overlap
+t+1: train 49,888 rows (22 Mar 16h-26 Mar 06h UTC) | test 18,614 rows (26 Mar 08h-27 Mar 00h UTC)
+/home/claude/oslo-ev-charging-forecast/src/train.py:61: DeprecationWarning: The 'generic' unit for NumPy timedelta is deprecated, and will raise an error in the future. This includes implicit conversion of bare integers (e.g. `+ 1`). Please use a specific unit instead.
+  tr, te = d[d.hour < TEST_START - pd.Timedelta(hours=h)], d[d.hour >= TEST_START]  # gap: no target overlap
+t+3: train 45,778 rows (22 Mar 16h-26 Mar 04h UTC) | test 16,193 rows (26 Mar 08h-26 Mar 22h UTC)
+/home/claude/oslo-ev-charging-forecast/src/train.py:61: DeprecationWarning: The 'generic' unit for NumPy timedelta is deprecated, and will raise an error in the future. This includes implicit conversion of bare integers (e.g. `+ 1`). Please use a specific unit instead.
+  tr, te = d[d.hour < TEST_START - pd.Timedelta(hours=h)], d[d.hour >= TEST_START]  # gap: no target overlap
+t+6: train 40,034 rows (22 Mar 16h-26 Mar 01h UTC) | test 12,663 rows (26 Mar 08h-26 Mar 19h UTC)
+horizon                 model    MAE   RMSE      R2  n_train  n_test
+    t+1     Baseline: average 0.3262 0.3705 -0.0000    49888   18614
+    t+1 Baseline: same as now 0.1006 0.2042  0.6961    49888   18614
+    t+1     Linear regression 0.1192 0.1934  0.7275    49888   18614
+    t+1         Random Forest 0.1020 0.1692  0.7914    49888   18614
+    t+1     Gradient Boosting 0.1007 0.1685  0.7933    49888   18614
+    t+3     Baseline: average 0.3245 0.3704 -0.0017    45778   16193
+    t+3 Baseline: same as now 0.2177 0.3554  0.0780    45778   16193
+    t+3     Linear regression 0.2362 0.3107  0.2952    45778   16193
+    t+3         Random Forest 0.2124 0.2809  0.4239    45778   16193
+    t+3     Gradient Boosting 0.2071 0.2778  0.4366    45778   16193
+    t+6     Baseline: average 0.3267 0.3765 -0.0178    40034   12663
+    t+6 Baseline: same as now 0.3195 0.4605 -0.5223    40034   12663
+    t+6     Linear regression 0.2931 0.3585  0.0772    40034   12663
+    t+6         Random Forest 0.2618 0.3289  0.2234    40034   12663
+    t+6     Gradient Boosting 0.2537 0.3219  0.2560    40034   12663
+ threshold  precision  recall    f1
+      0.50      0.594   0.920 0.722
+      0.55      0.733   0.893 0.805
+      0.60      0.771   0.879 0.822
+      0.65      0.791   0.862 0.825
+      0.70      0.814   0.836 0.825
+      0.75      0.833   0.798 0.815
+      0.80      0.852   0.751 0.798
+      0.85      0.875   0.659 0.752
+      0.90      0.911   0.533 0.673
+/home/claude/oslo-ev-charging-forecast/src/train.py:149: DeprecationWarning: The 'generic' unit for NumPy timedelta is deprecated, and will raise an error in the future. This includes implicit conversion of bare integers (e.g. `+ 1`). Please use a specific unit instead.
+  city.index = (city.index + pd.Timedelta(hours=1)).tz_convert("Europe/Oslo")
+figures saved to reports/figures
