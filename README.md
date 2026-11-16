@@ -2,13 +2,17 @@
 
 ![CI](https://github.com/alejandrodelas/oslo-ev-charging-forecast/actions/workflows/ci.yml/badge.svg)
 
-This project predicts what share of the chargers at each public charging station in Oslo will be in use 1, 3 and 6 hours from now. It uses the live charger status feed from NOBIL, the station register and hourly road traffic counts from Statens vegvesen. The idea is that a grid operator could see a busy evening coming in some part of the city and plan for it.
+This project predicts what share of the chargers at each public charging station in Oslo will be in use 1, 3 and 6 hours from now. It uses the live charger status feed from NOBIL, the station register and hourly road traffic counts from Statens vegvesen.
+
+Norway has the highest share of electric cars in the world (96 % of new cars sold in 2025 were electric), which makes Oslo a good place to study charging demand. A charging station doesn't store energy, it draws it from the grid as cars plug in, so a forecast is useful for knowing the peaks in advance: Norwegian grid fees depend largely on peak power, charging can be capped or shifted when a peak is coming, and drivers can be sent to stations that will still have a free charger.
 
 ![Actual vs predicted occupancy on the test day](reports/figures/test_day_actual_vs_predicted.png)
 
 ## Where this comes from
 
 It started as our Proyecto III at UPV (spring 2026), a team project with six of us. With the work split six ways, my part was the data side: cleaning the NOBIL station register, joining it with the real-time events, the exploratory analysis and the [interactive station map](https://github.com/alejandrodelas/Interactive-EV-Charging-Demand-Analysis-Oslo). Teammates built the data collector and the final models in R.
+
+NOBIL's live feed only keeps about two days of charger status, so there was no history to train on. We had to build our own by collecting the feed around the clock on a university virtual machine. That changed the project: with days of data instead of years, we moved from forecasting months ahead to hours ahead. The machine also stopped several times, the longest over the Easter break, when nobody was at the university to restart it, which is why only about three days are usable.
 
 After the course I redid the entire project on my own in Python, from the raw data to the final models, and improved it. Going back over the team results, something didn't add up: our error got smaller the further ahead we predicted, which shouldn't happen. Looking into it, I found two reasons.
 
@@ -41,6 +45,11 @@ What surprised me most was that Oslo's chargers fill up at night, between 22:00 
 - There are only about three days of usable data, so the model can't learn weekly patterns. A collector running for a few months would fix the biggest weakness.
 - Occupancy isn't energy. A car can stay plugged in after it's full. Session data in kWh would be the real demand.
 - Traffic is a city-wide signal. Matching each station to its nearest traffic sensor might make it more useful.
+
+## What I took from it
+
+- Data access can change a project completely. The data you planned on may turn out incomplete, different or without a reliable source, and the questions you can answer change with it.
+- Relying on outside infrastructure is a double-edged sword: it gives you resources you couldn't have alone, but parts of the project end up outside your control.
 
 ## Running it
 
