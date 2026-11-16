@@ -8,9 +8,9 @@ This project predicts what share of the chargers at each public charging station
 
 ## Where this comes from
 
-It started as our Proyecto III at UPV (spring 2026), a team project with six of us. I worked on the data side: cleaning the NOBIL station register, joining it with the real-time events, the exploratory analysis and the [interactive station map](https://github.com/alejandrodelas/Interactive-EV-Charging-Demand-Analysis-Oslo). Teammates built the data collector and the final models in R.
+It started as our Proyecto III at UPV (spring 2026), a team project with six of us. With the work split six ways, my part was the data side: cleaning the NOBIL station register, joining it with the real-time events, the exploratory analysis and the [interactive station map](https://github.com/alejandrodelas/Interactive-EV-Charging-Demand-Analysis-Oslo). Teammates built the data collector and the final models in R.
 
-After the course I rebuilt the whole project in Python on my own. Going back over the team results, something didn't add up: our error got smaller the further ahead we predicted, which shouldn't happen. Looking into it, I found two reasons.
+After the course I redid the entire project on my own in Python, from the raw data to the final models, and improved it. Going back over the team results, something didn't add up: our error got smaller the further ahead we predicted, which shouldn't happen. Looking into it, I found two reasons.
 
 1. Our target was the share of status messages saying "charging" in each hour. A charger sends one message when it starts and then goes quiet, so about 3 in 4 station-hours had no data at all. Where there was data, it correlated only 0.19 with how busy the station really was.
 2. The 3 h and 6 h models were tested on fewer, busier stations than the 1 h model, so the scores weren't comparable.
