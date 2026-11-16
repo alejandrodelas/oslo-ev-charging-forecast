@@ -2,9 +2,18 @@
 
 ![CI](https://github.com/alejandrodelas/oslo-ev-charging-forecast/actions/workflows/ci.yml/badge.svg)
 
-This project predicts what share of the chargers at each public charging station in Oslo will be in use 1, 3 and 6 hours from now. It uses the live charger status feed from NOBIL, the station register and hourly road traffic counts from Statens vegvesen.
+Norway has the highest share of electric cars in the world (96 % of new cars sold in 2025 were electric), which makes Oslo a good place to study charging demand.
 
-Norway has the highest share of electric cars in the world (96 % of new cars sold in 2025 were electric), which makes Oslo a good place to study charging demand. A charging station doesn't store energy, it draws it from the grid as cars plug in, so a forecast is useful for knowing the peaks in advance: Norwegian grid fees depend largely on peak power, charging can be capped or shifted when a peak is coming, and drivers can be sent to stations that will still have a free charger.
+## What it predicts and why it's useful
+
+For every public charging station in Oslo, the model predicts what share of its chargers will be in use 1, 3 and 6 hours from now, from 0 % (all free) to 100 % (all busy). It uses the live charger status feed from NOBIL, the station register and hourly road traffic counts from Statens vegvesen.
+
+A charging station doesn't store energy, it draws it from the grid the moment a car plugs in. So the point isn't to have energy ready, it's to know the busy hours in advance:
+
+- Peaks cost money. In Norway, grid fees depend largely on peak power, so an operator who sees a busy hour coming can cap or spread the charging.
+- Electricity is bought ahead of time. Suppliers buy power on the day-ahead market, and a better demand forecast means better purchases.
+- Drivers can be sent to stations that will still have a free charger.
+- Stations that fill up again and again show where more chargers are needed.
 
 ![Actual vs predicted occupancy on the test day](reports/figures/test_day_actual_vs_predicted.png)
 
